@@ -15,12 +15,12 @@ function convertkmTocm(kilometer) {
     return kilometer * 100000;
 }
 
-// Convert 100000 cm to km
-let centimeter = 100000;
+// Convert 500000 cm to km
+let centimeter = 500000;
 let kilometer = convertcmTokm(centimeter);
 console.log(`${centimeter} cm is equal to ${kilometer} km`)
 
-// Convert 5 km to cm
-kilometer = 5;
+// Convert 3 km to cm
+kilometer = 3;
 centimeter = convertkmTocm(kilometer);
 console.log(`${kilometer} km is equal to ${centimeter} cm`);
