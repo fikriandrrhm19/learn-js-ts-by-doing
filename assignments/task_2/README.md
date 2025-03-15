@@ -146,6 +146,45 @@ git merge <branch_name>
 git push origin main
 ```
 
+### 5. Make a Pull Request, Review the Code, and Merge the Changes
+Since the necessary commits have already been made both locally and on GitHub, the method used here is `fetch` to retrieve the latest changes before merging.
+
+First, ensure all changes are staged and committed before fetching updates:
+```
+git add .
+git status
+git commit -m “<description>”
+```
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/16e32906-007c-431a-9574-5a525605e0cf" alt="image">
+</p>
+The image below shows the differences between the commits in both repositories.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2a5487b5-a815-463f-9363-40b74f48d70c" alt="image">
+</p>
+
+Retrieve the latest changes from the remote repository:
+
+```
+git fetch origin main
+```
+
+Merge the fetched changes into the local branch:
+```
+git merge main origin/main
+```
+
+This step integrates the updates from the remote branch into the local repository.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9c571784-6598-44c3-962e-96d6012badef" alt="image">
+  <img src="https://github.com/user-attachments/assets/229e8047-ba00-47e6-b5b3-5e2dab99e148" alt="image">
+</p>
+
+After completing these steps, the repository is successfully updated with the latest changes.
+
  
 
 ## Exercise 2: JavaScript Scripting
