@@ -22,3 +22,5 @@ let fullName: string = "Fikri Andra Andra Irham";
 let modifiedFullName: string = removeFirstOccurrence(fullName, "Andra");
 console.log(`Original text: "${fullName}"`);
 console.log(`After removing first "Andra": "${modifiedFullName}"`);
+
+export {}
