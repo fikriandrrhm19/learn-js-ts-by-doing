@@ -17,3 +17,5 @@ console.log(`Checking if ${number} is even: ${isEven(number)}`);
 // Example 2: Checking if 1001 is even
 number = 1001;
 console.log(`Checking if ${number} is even: ${isEven(number)}`);
+
+export {}
