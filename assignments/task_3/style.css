@@ -11,7 +11,8 @@ body {
 }
 
 .page {
-  width: 1040px;
+  max-width: 1680px;
+  width: 85%;
   margin: 0px auto;
   padding-top: 64px;
 }
@@ -22,7 +23,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 100px;
 }
 
 /* Check list styling */
@@ -53,14 +54,21 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
   margin-top: 64px;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 }
 
 /* Check margin and font styling */
+.text {
+  flex: 1;
+  min-width: 300px;
+}
+
 .text h1 {
   font-family: 'Mulish', sans-serif;
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: 400;
   line-height: 150%;
 }
@@ -100,6 +108,7 @@ main {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
+  width: fit-content;
 }
 
 /* Handle when user hover on the button */
@@ -108,7 +117,9 @@ main {
 }
 
 .hero-image {
-  max-width: 100%;
+  flex: 1;
+  max-width: 500px;
+  width: 100%;
   height: auto;
 }
 
@@ -136,5 +147,52 @@ footer a:hover {
   position: fixed;
   bottom: 0;
   right: 0;
+  height: auto;
 }
 
+/* Responsive */
+@media (max-width: 1024px) {
+  .page {
+    width: 95%;
+  }
+  main {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-image {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  .text button {
+    margin: 30px auto 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .text h1 {
+    font-size: 2rem;
+  }
+  .text p {
+    font-size: 14px;
+  }
+  .text button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-image {
+    max-width: 100%;
+  }
+  .text h1 {
+    font-size: 1.8rem;
+  }
+  .text p {
+    font-size: 14px;
+  }
+  .text button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
