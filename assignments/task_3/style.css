@@ -8,8 +8,16 @@ body {
   background: linear-gradient(180deg, rgba(227, 255, 248, 0) 82.08%, rgba(227, 255, 248, 0.38) 100%);
   font-family: 'Open Sans', sans-serif;
   min-height: 100vh;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
+/* Apply fade-in effect when the page is fully loaded */
+body.loaded {
+  opacity: 1;
+}
+
+/* Set page container with maximum width and centered alignment */
 .page {
   max-width: 1680px;
   width: 85%;
@@ -17,7 +25,6 @@ body {
   padding-top: 64px;
 }
 
-/* Check margin */
 nav {
   font-family: 'Mulish', sans-serif;
   display: flex;
@@ -38,17 +45,40 @@ nav ul li a {
   text-decoration: none;
   font-size: 18px;
   color: #1F1534;
-  opacity: 50%;
+  opacity: 0.6;
   transition: all 0.3s ease-in-out;
+  position: relative;
 }
 
-/* Make text bold on hover */
+/* Underline effect on hover */
+nav ul li a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #69B99D;
+  transition: width 0.3s ease-in-out;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Bold text on hover */
 nav ul li a:hover {
   color: #1F1534;
-  font-weight: 700;
-  opacity: 100%;
+  opacity: 1;
 }
 
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Active menu effect */
+nav ul li a.active {
+  opacity: 1;
+  font-weight: bold;
+}
 
 main {
   display: flex;
@@ -58,9 +88,16 @@ main {
   gap: 40px;
   margin-top: 64px;
   margin-bottom: 80px;
+  transform: translateY(30px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
-/* Check margin and font styling */
+main.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Text section inside main content */
 .text {
   flex: 1;
   min-width: 300px;
@@ -73,13 +110,13 @@ main {
   line-height: 150%;
 }
 
-/* Check font styling */
+/* Highlight specific words inside h1 */
 .text h1 span { 
   color: #89C5CC;
   font-weight: 700;
 }
 
-/* Check font styling */
+/* Paragraph text styling */
 .text p {
   font-family: 'Open Sans', sans-serif; 
   font-size: 16px;
@@ -107,13 +144,16 @@ main {
   font-size: 16px;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: fit-content;
 }
 
 /* Handle when user hover on the button */
 .text button:hover {
   background-color: #4a8a77;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .hero-image {
@@ -121,9 +161,15 @@ main {
   max-width: 500px;
   width: 100%;
   height: auto;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
 }
 
-/* Check the text styling */
+.hero-image.visible {
+  opacity: 1;
+}
+
+/* Footer styling */
 footer {
   text-align: center;
   font-size: 14px;
@@ -131,7 +177,6 @@ footer {
   color: #555;
 }
 
-/* Check the text styling */
 footer a {
   color: #000;
   text-decoration: none;
@@ -143,6 +188,7 @@ footer a:hover {
   color: #007bff;
 }
 
+/* Floating decorative element */
 #balls {
   position: fixed;
   bottom: 0;
